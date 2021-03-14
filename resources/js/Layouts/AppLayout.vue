@@ -112,6 +112,19 @@
                                             API Tokens
                                         </jet-dropdown-link>
 
+                                        <!-- Developers stuff. -->
+                                        <div v-if="isDeveloper">
+                                            <div class="border-t border-gray-100"></div>
+
+                                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                                Developer Tools
+                                            </div>
+
+                                            <jet-dropdown-link href="/horizon">
+                                                Horizon (Queues)
+                                            </jet-dropdown-link>
+                                        </div>
+
                                         <div class="border-t border-gray-100"></div>
 
                                         <!-- Authentication -->
@@ -251,6 +264,16 @@
             return {
                 showingNavigationDropdown: false,
             }
+        },
+
+        computed: {
+            isDeveloper() {
+                const developerEmails = process.env.MIX_DEVELOPERS
+                    ? process.env.MIX_DEVELOPERS.split(',')
+                    : []
+
+                return developerEmails.includes(this.$page.props.user.email)
+            },
         },
 
         methods: {
