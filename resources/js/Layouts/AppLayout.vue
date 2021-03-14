@@ -120,8 +120,12 @@
                                                 Developer Tools
                                             </div>
 
+                                            <jet-dropdown-link href="/telescope">
+                                                Telescope <small class="text-gray-500">Insights</small>
+                                            </jet-dropdown-link>
+
                                             <jet-dropdown-link href="/horizon">
-                                                Horizon (Queues)
+                                                Horizon <small class="text-gray-500">Queues</small>
                                             </jet-dropdown-link>
                                         </div>
 
